@@ -12,3 +12,9 @@ def division(a, b):
         return a / b
     else:
         return "No se puede dividir entre cero"
+
+def potencia(a, b): 
+    return a ** b
+
+def modulo(a, b):
+    return a % b 
