@@ -12,4 +12,4 @@ print("Multiplicación:", matematicas.multiplicacion(a, b))
 print("División:", matematicas.division(a, b))
 
 print("\nCuento:")
-cuento.imprimir_cuento()
+cuento.imprimir_cuento() 
