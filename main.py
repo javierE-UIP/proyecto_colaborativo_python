@@ -10,6 +10,8 @@ print("Suma:", matematicas.suma(a, b))
 print("Resta:", matematicas.resta(a, b))
 print("Multiplicación:", matematicas.multiplicacion(a, b))
 print("División:", matematicas.division(a, b))
+print("Potencia:", matematicas.potencia(a, b))
+print("Modulo:", matematicas.modulo(a, b))
 
 print("\nCuento:")
 cuento.imprimir_cuento() 
