@@ -9,17 +9,6 @@ edades = {
     "Maria": 28,
     "Pedro": 35
 }
-
-# Solicitar nombre al usuario
-nombre = input("Ingresa un nombre: ")
-
-# Condicional para verificar si existe
-if nombre in edades:
-    print(nombre, "tiene", edades[nombre], "años.")
-else:
-    print("La persona no fue encontrada.")
-
-# >>> Nuevas lineas añadidas <<<
 # Diccionario con profesiones de cada persona 
 profesiones = {
     "Ana": "ingeniera",
@@ -28,6 +17,9 @@ profesiones = {
     "Maria": "diseñadora",
     "Pedro": "abogado"
 }
+
+# Solicitar nombre al usuario
+nombre = input("Ingresa un nombre: ")
 
 # Mostrar informacion extendida si el nombre existe
 if nombre in edades:
