@@ -1,9 +1,15 @@
+import os
+
+def limpiar():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 # Base de datos de usuarios (PIN: saldo)
 usuarios = {
     "1234": {"nombre": "Juan", "saldo": 1000, "movimientos": []},
     "5678": {"nombre": "Ana", "saldo": 1500, "movimientos": []}
 }
 
+limpiar()
 print("💰 Bienvenido a tu Cajero Automático")
 
 # 🔐 Login con PIN
@@ -11,7 +17,8 @@ pin = input("Ingrese su PIN: ")
 
 if pin in usuarios:
     usuario = usuarios[pin]
-    print(f"\nHola {usuario['nombre']} 👋")
+    limpiar()
+    print(f"Hola {usuario['nombre']} 👋")
 
     opcion = 0
 
@@ -26,22 +33,25 @@ if pin in usuarios:
         try:
             opcion = int(input("Selecciona una opción: "))
         except:
+            limpiar()
             print("❌ Debes ingresar un número válido")
             continue
+
+        limpiar()
             
         # 💰 Consultar saldo
         if opcion == 1:
-            print(f"Tu saldo actual es: ${usuario['saldo']}")
+            print(f"💰 Tu saldo actual es: ${usuario['saldo']}")
 
         # ➕ Depositar
         elif opcion == 2:
             try:
                 deposito = float(input("Ingrese monto a depositar: "))
+                limpiar()
                 if deposito > 0:
                    usuario["saldo"] += deposito
                    usuario["movimientos"].append(f"Depósito: +${deposito}")
                    print("✅ Depósito realizado con éxito")
-                   print(f"Saldo actual: ${usuario['saldo']}") 
                 else:
                     print("❌ El monto debe ser positivo")
             except:
@@ -51,6 +61,7 @@ if pin in usuarios:
         elif opcion == 3:
             try:
                 retiro = float(input("Ingrese monto a retirar: "))
+                limpiar()
                 if retiro <= 0:
                      print("❌ El monto debe ser positivo")
                 elif retiro <= usuario["saldo"]:
@@ -79,4 +90,5 @@ if pin in usuarios:
             print("❌ Opción inválida")
 
 else:
+    limpiar()
     print("❌ PIN incorrecto")
