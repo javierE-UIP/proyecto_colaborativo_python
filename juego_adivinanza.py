@@ -31,29 +31,37 @@ def jugar():
     print(f"\nAdivina el número entre 1 y {limite}")
     print("Tienes 5 intentos")
 
-    while intentos > 0:
-        try:
-            numero = int(input("Ingresa tu número: "))
-            # validacion de rango
-            if numero < 1 or numero > limite:
-                print(f"Ingresa un numero entre 1 y {limite}")
-                continue
-        except ValueError:
-            print("Por favor ingresa un número válido.")
+    historial = []
+
+  while intentos > 0:
+    try:
+        numero = int(input("Ingresa tu número: "))
+
+        # validacion de rango
+        if numero < 1 or numero > limite:
+            print(f"Ingresa un numero entre 1 y {limite}")
             continue
 
-        if numero == numero_secreto:
-            print("🎉 ¡Correcto! Adivinaste el número.")
-            return
-        elif numero < numero_secreto:
-            print("📉 El número es mayor.")
-        else:
-            print("📈 El número es menor.")
+        # guardar historial
+        historial.append(numero)
+        print("📜 Intentos realizados:", historial)
 
-        intentos -= 1
-        print(f"Te quedan {intentos} intentos\n")
+    except ValueError:
+        print("Por favor ingresa un número válido.")
+        continue
 
-    print(f"❌ Perdiste. El número era {numero_secreto}")
+    if numero == numero_secreto:
+        print("🎉 ¡Correcto! Adivinaste el número.")
+        return
+    elif numero < numero_secreto:
+        print("📉 El número es mayor.")
+    else:
+        print("📈 El número es menor.")
+
+    intentos -= 1
+    print(f"Te quedan {intentos} intentos\n")
+
+print(f"❌ Perdiste. El número era {numero_secreto}")
 
 
 # Repetir juego
