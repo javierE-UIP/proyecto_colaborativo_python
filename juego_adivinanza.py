@@ -27,6 +27,7 @@ def jugar():
 
     numero_secreto = random.randint(1, limite)
     intentos = 5
+    historial = []
 
     print(f"\nAdivina el número entre 1 y {limite}")
     print("Tienes 5 intentos")
@@ -42,8 +43,10 @@ def jugar():
             print("Por favor ingresa un número válido.")
             continue
 
+        historial.append(numero)
         if numero == numero_secreto:
-            print("🎉 ¡Correcto! Adivinaste el número.")
+            print("🎉 ¡Correcto!")
+            print("Intentos usados:", len(historial))
             return
         elif numero < numero_secreto:
             print("📉 El número es mayor.")
