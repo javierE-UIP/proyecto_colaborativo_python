@@ -53,7 +53,7 @@ if pin in usuarios:
             
         # 💰 Consultar saldo
         if opcion == 1:
-            print(f"💰 Tu saldo actual es: ${usuario['saldo']}")
+            print(f"💰 Saldo actual: ${usuario['saldo']:.2f}")
 
         # ➕ Depositar
         elif opcion == 2:
